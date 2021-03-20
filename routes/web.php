@@ -41,13 +41,13 @@ Route::group(['prefix'=>'admin','middleware' => 'auth'],
 function () 
 {
     Route::get('/', 'Admin\AdminController@index')->name('admin.index');
-    Route::resource('/contacts', 'ContactsController')->only('index');
+    Route::resource('/contacts', 'ContactsController')->only('index','destroy');
     Route::resource('/galleries', 'GalleriesController');
     Route::resource('/categories', 'CategoriesController');
     Route::resource('/posts', 'PostsController');
     Route::resource('/comments', 'CommentsController')->only('index');
     Route::resource('/courses', 'CoursesController');
-    Route::resource('/emails', 'EmailController')->only('index');
+    Route::resource('/emails', 'EmailController')->only('index','destroy');
 });
 
 
