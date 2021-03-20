@@ -12,8 +12,8 @@ class ContactsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('show','ContactPage');
-        $this->middleware('can:admin')->except('show','ContactPage');
+        $this->middleware('auth')->except('show','ContactPage','store');
+        $this->middleware('can:admin')->except('show','ContactPage','store');
     }
 
     public function index()

@@ -21,7 +21,7 @@ use App\Http\Controllers\CoursesController;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::resource('contacts', 'ContactsController')->only('create', 'index', 'store');
+Route::resource('contacts', 'ContactsController');
 Route::resource('galleries', 'GalleriesController')->only('create', 'index', 'store');
 Route::resource('posts', 'PostsController')->only('create', 'index', 'store');
 Route::resource('comments', 'CommentsController');
@@ -41,7 +41,7 @@ Route::group(['prefix'=>'admin','middleware' => 'auth'],
 function () 
 {
     Route::get('/', 'Admin\AdminController@index')->name('admin.index');
-    Route::resource('/contacts', 'ContactsController');
+    Route::resource('/contacts', 'ContactsController')->only('index');
     Route::resource('/galleries', 'GalleriesController');
     Route::resource('/categories', 'CategoriesController');
     Route::resource('/posts', 'PostsController');
