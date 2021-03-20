@@ -104,6 +104,9 @@ class ContactsController extends Controller
     }
 
     public function ContactPage(){
-        return view('contact.index',['categories' => Category::all(),'courses' => Course::all()]);
+        return view('contact.index',['categories' => Category::all(),
+        'courses' => Course::all(),
+        'email'=>Email::all(),
+        ]);
     }
 }

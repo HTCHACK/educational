@@ -47,7 +47,7 @@ function ()
     Route::resource('/posts', 'PostsController');
     Route::resource('/comments', 'CommentsController')->only('index');
     Route::resource('/courses', 'CoursesController');
-    Route::resource('/emails', 'EmailController');
+    Route::resource('/emails', 'EmailController')->only('index');
 });
 
 

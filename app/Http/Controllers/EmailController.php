@@ -8,8 +8,8 @@ class EmailController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('show');
-        $this->middleware('can:admin')->except('show');
+        $this->middleware('auth')->except('show','store');
+        $this->middleware('can:admin')->except('show','store');
     }
 
     public function index()

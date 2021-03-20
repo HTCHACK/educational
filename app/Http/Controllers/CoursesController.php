@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\Email;
 
 class CoursesController extends Controller
 {
@@ -67,7 +68,7 @@ class CoursesController extends Controller
         return view('course.show',
       [
         'course'=>Course::limit(5)->orderBy('created_at','DESC')->findorFail($id),
-
+        'email'=>Email::all(),
       ]  
     );
     }
@@ -132,6 +133,6 @@ class CoursesController extends Controller
     }
 
     public function CoursesPage(){
-        return view('course.index',['courses'=>Course::all()]);
+        return view('course.index',['courses'=>Course::all(),'email'=>Email::all()]);
     }
 }

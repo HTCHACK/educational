@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Gallery;
 use App\Category;
+use App\Email;
 use Illuminate\Http\Request;
 use App\Http\Requests\GalleryRequest;
 
@@ -112,6 +113,6 @@ class GalleriesController extends Controller
 
     public function GalleryPage()
     {
-        return view('gallery.index', ['galleries' => Gallery::all()],['categories' => Category::all()]);
+        return view('gallery.index', ['galleries' => Gallery::all()],['categories' => Category::all(),'email'=>Email::all()]);
     }
 }

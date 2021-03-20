@@ -6,6 +6,7 @@ use App\Post;
 use App\Category;
 use App\Comment;
 use App\Gallery;
+use App\Email;
 use App\Http\Requests\GalleryRequest;
 use Illuminate\Http\Request;
 
@@ -79,6 +80,7 @@ class PostsController extends Controller
         'posts'=>Post::limit(2)->orderby('created_at','DESC')->get()->all(),
         'popular'=>Post::limit(10)->orderby('created_at','DESC')->get()->all(),
         'galleries'=>Gallery::limit(6)->get()->all(),
+        'email'=>Email::all(),
         ]
     );
 
