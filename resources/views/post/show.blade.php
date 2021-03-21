@@ -79,7 +79,8 @@
                                     
                                 </ul>
                                 <p>{!! $post->description !!}
-                                            <a class="btn btn-default" href="{{ asset('storage/' . $post->file) }}" download="{{ asset('storage/' . $post->file) }}"><i class="fa fa-download"></i>FILE</a>
+                                    <a class="btn btn-default" type="button" onclick="window.print()"><i class="fas fa-fw fa-print"></i>
+                                        Print</a>
                                             
                                  </p>
                                 <blockquote class="blockquote_style1">

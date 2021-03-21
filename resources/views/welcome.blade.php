@@ -119,8 +119,9 @@
             </div>
         </div>
         <div class="row">
+            @foreach($posts as $key=>$post)
             <div class="col-lg-4 col-md-6">
-                @foreach($posts as $key=>$post)
+               
                 <div class="courses_box radius_all_10 box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                     <div class="courses_img"> 
                     	<a href="{{ route('postus.show', $post->id) }}"><img src="{{ asset('storage/' . $post->image) }}" alt="course_img1"/></a>

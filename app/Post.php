@@ -10,7 +10,6 @@ class Post extends Model
         'name',
         'description',
         'image',
-        'file',
         'author',
         'category_id',
     ];

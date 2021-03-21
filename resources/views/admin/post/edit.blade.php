@@ -65,11 +65,6 @@
                                             <label for="exampleFormControlFile1" style="border: 2px solid #9C27B0;border-radius:3px;padding:0.4rem 1rem">Choose Image</label>
                                             <input id="exampleFormControlFile1" type="file" name="image" class="form-control-file" title="exampleFormControlFile1">
                                         </div>
-                                        <div class="form-group">
-                                            <embed src="{{ asset('storage/' . $post->file) }}" width="100px" height="70px" />
-                                            <label for="example" style="border: 2px solid #9C27B0;border-radius:3px;padding:0.4rem 1rem">Choose File Max Size 20MB</label>
-                                            <input id="example" type="file" name="file" class="form-control-file" title="">
-                                        </div>
                                         <button type="submit" class="btn btn-primary">Edit</button>
                                     </form>
 
