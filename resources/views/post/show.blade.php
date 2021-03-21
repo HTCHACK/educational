@@ -86,7 +86,7 @@
                                             style="background-color:#007bff;border-radius:2px;color:#fff;padding:0.2rem;0.5rem;">
                                             <a class="tgme_action_button" style="color:#fff"
                                                 href="tg://msg_url?url=http://www.alisherfilolog.uz/{{ route('postus.show', $post->id) }}"><i
-                                                    class="fa fa-paper-plane"></i> Share 0</a>
+                                                    class="fa fa-paper-plane"></i> Share</a>
                                         </div>
                                     </li>
                                     
