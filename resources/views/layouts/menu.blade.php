@@ -44,7 +44,7 @@
                 </ul>
           	</div>
 			<ul class="navbar-nav attr-nav align-items-center">
-                
+
                 <li class="dropdown">
                 	<a class="nav-link cart_trigger" href="" data-toggle="dropdown"><i class="fa fa-paper-plane"></i><span class="cart_count"></span></a>
                     <div class="cart_box dropdown-menu dropdown-menu-right">
