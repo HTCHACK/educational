@@ -39,11 +39,11 @@
                                 <li>
                                     <div class="post_footer">
                                         <div class="post_img">
-                                            <a href="{{ route('postus.show', $post->id) }}"><img src="{{ asset('storage/' . $pop->image) }}"
+                                            <a href="{{ route('postus.show', $pop->id) }}"><img src="{{ asset('storage/' . $pop->image) }}"
                                                     alt="letest_post1" style="width:100px"></a>
                                         </div>
                                         <div class="post_content">
-                                            <h6><a href="{{ route('postus.show', $post->id) }}">{{$pop->name}}</a>
+                                            <h6><a href="{{ route('postus.show', $pop->id) }}">{{$pop->name}}</a>
                                                 <p class="small m-0">{{ Carbon\Carbon::parse($pop->created_at)->format('M d Y, H:i:s') }}</p>
                                             </h6>
                                             

@@ -124,7 +124,7 @@
                
                 <div class="courses_box radius_all_10 box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                     <div class="courses_img"> 
-                    	<a href="{{ route('postus.show', $post->id) }}"><img src="{{ asset('storage/' . $post->image) }}" alt="course_img1"/></a>
+                    	<a href="{{ route('postus.show', $post->id) }}"><img src="{{ asset('storage/' . $post->image) }}" alt="course_img1" style="height:250px"/></a>
                     </div>
                   	<div class="courses_info">
                         <div class="rating_stars"> 
