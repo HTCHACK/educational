@@ -1,6 +1,11 @@
 @extends('layouts.body')
 @section('title')
     <title>AlisherFilolog | Post Detallari</title>
+    <meta property="og:url"           content="http://www.alisherfilolog.uz/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Alisher Filolog | Uz" />
+    <meta property="og:description"   content="{{ Str::limit($post->description, 60) }}" />
+    <meta property="og:image"         content="{{ asset('storage/' . $post->image) }}" />
 @endsection
 
 
@@ -43,7 +48,7 @@
                                                     alt="letest_post1" style="width:100px"></a>
                                         </div>
                                         <div class="post_content">
-                                            <h6><a href="{{ route('postus.show', $pop->id) }}">{{$pop->name}}</a>
+                                            <h6><a href="{{ route('postus.show', $pop->id) }}">{{ Str::limit($pop->name, 30) }}</a>
                                                 <p class="small m-0">{{ Carbon\Carbon::parse($pop->created_at)->format('M d Y, H:i:s') }}</p>
                                             </h6>
                                             
@@ -76,6 +81,25 @@
                                     </li>
                                     <li><a href="blog-detail.html#"><i class="ti-comments"></i>{{ count($comments) }}</a>
                                     </li>
+                                    <div id="fb-root"></div>
+                                            <script>
+                                                (function(d, s, id) {
+                                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                                    if (d.getElementById(id)) return;
+                                                    js = d.createElement(s);
+                                                    js.id = id;
+                                                    js.src =
+                                                        "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                                                    fjs.parentNode.insertBefore(js, fjs);
+                                                }(document, 'script', 'facebook-jssdk'));
+
+                                            </script>
+
+                                            <!-- Your share button code -->
+                                            <div class="fb-share-button"
+                                                data-href="http://www.alisherfilolog.uz/{{ route('postus.show', $post->id) }}"
+                                                data-layout="button_count">
+                                            </div>
                                     
                                 </ul>
                                 <p>{!! $post->description !!}
