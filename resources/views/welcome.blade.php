@@ -189,15 +189,14 @@
                                                     class="ti-time"></i>{{ Carbon\Carbon::parse($post->created_at)->format('M d ') }}</span>{{ Carbon\Carbon::parse($post->created_at)->format('- Y') }}</a>
                                         </li>
                                         <li>
-                                            <div id="fb-root"></div>
-                                            <script async defer crossorigin="anonymous"
-                                                src="https://connect.facebook.net/uz_UZ/sdk.js#xfbml=1&version=v10.0"
-                                                nonce="py6gQShb"></script>
-                                            <div class="fb-share-button"
-                                                data-href="http://www.alisherfilolog.uz/&#123;&#123; route(&#039;postus.show&#039;, $post-&gt;id) &#125;&#125;"
-                                                data-layout="button_count" data-size="large"><a target="_blank"
-                                                    href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.alisherfilolog.uz%2F%257B%257B+route%28%27postus.show%27%2C+%24post-%3Eid%29+%257D%257D&amp;src=sdkpreparse"
-                                                    class="fb-xfbml-parse-ignore">Ulashish</a></div>
+                                            <li>
+                                                <div class="fb-share-button" data-layout="button_count"
+                                                    style="background-color:#007bff;border-radius:2px;color:#fff;padding:0.2rem;0.5rem;">
+                                                    <a class="tgme_action_button" style="color:#fff"
+                                                        href="tg://msg_url?url=http://www.alisherfilolog.uz/{{ route('postus.show', $post->id) }}"><i
+                                                            class="fa fa-paper-plane"></i> Share 0</a>
+                                                </div>
+                                            </li>
                                         </li>
                                     </ul>
                                 </div>
