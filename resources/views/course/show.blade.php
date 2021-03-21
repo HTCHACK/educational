@@ -1,6 +1,6 @@
 @extends('layouts.body')
 @section('title')
-    <title>AlisherFilolog | Post Detail</title>
+    <title>AlisherFilolog | Kurs Haqida</title>
 @endsection
 
 @section('content')

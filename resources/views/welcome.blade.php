@@ -189,14 +189,12 @@
                                                     class="ti-time"></i>{{ Carbon\Carbon::parse($post->created_at)->format('M d ') }}</span>{{ Carbon\Carbon::parse($post->created_at)->format('- Y') }}</a>
                                         </li>
                                         <li>
-                                            <li>
-                                                <div class="fb-share-button" data-layout="button_count"
-                                                    style="background-color:#007bff;border-radius:2px;color:#fff;padding:0.2rem;0.5rem;">
+                                            <div class="fb-share-button" data-layout="button_count"
+                                                    style="background-color:#007bff;border-radius:2px;color:#fff;padding:0.2rem 0.5rem;">
                                                     <a class="tgme_action_button" style="color:#fff"
                                                         href="tg://msg_url?url={{ route('postus.show', $post->id) }}"><i
                                                             class="fa fa-paper-plane"></i> Share</a>
-                                                </div>
-                                            </li>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>

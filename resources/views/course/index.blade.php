@@ -120,7 +120,7 @@
                                     <ul class="courses_meta">
                                         <li><a href="{{ route('courseus.show', $course->id) }}"><i class="ti-time"></i><span>{{ Carbon\Carbon::parse($course->created_at)->format('M d Y') }}</span></a></li>
                                     </ul>
-                                    <div class="courses_price"> Narc <span>$30</span> </div>
+                                    <div class="courses_price"> Narx <span>$30</span> </div>
                                 </div>
                             </div>
                         </div>
