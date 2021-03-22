@@ -76,7 +76,7 @@ class PostsController extends Controller
                 'comments' => Comment::where('post_id', $id)->orderBy('created_at', 'DESC')->get(),
                 'latestcomments' => Comment::limit(3)->where('post_id', $id)->orderBy('created_at', 'DESC')->get(),
                 'posts' => Post::limit(2)->orderby('created_at', 'DESC')->get()->all(),
-                'popular' => Post::limit(10)->orderby('created_at', 'DESC')->get()->all(),
+                'popular' => Post::limit(4)->orderby('created_at', 'DESC')->get()->all(),
                 'galleries' => Gallery::limit(6)->get()->all(),
                 'email' => Email::all(),
             ]
