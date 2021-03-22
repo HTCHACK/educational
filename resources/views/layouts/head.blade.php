@@ -4,7 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Filolog Uz">
 <meta name="keywords" content="Filolog Uz">
-
+<meta id="theme-color1" name="theme-color" content="#FEBC34">
+<meta id="theme-color" name="msapplication-navbutton-color" content="#FEBC34">
+<meta id="theme-color2" name="apple-mobile-web-app-status-bar-style" content="#FEBC34">
 <title>Filolog Uz</title>
 <!-- Favicon Icon -->
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png')}}">
