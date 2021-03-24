@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
         $adminRole=Role::where('name','admin')->first();
         $user=User::create([
             'name'=>'Admin',
-            'phone_number'=>'996080863',
+            'phone_number'=>'999060863',
             'password'=>Hash::make('@admin2000@nimda@#$filolog')
         ]);
         $user->roles()->attach($adminRole);

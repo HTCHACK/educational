@@ -58,7 +58,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" name="description"  placeholder="description" cols="80"></textarea>
+                                            <textarea class="form-control" id="id_subtitle" name="description"  placeholder="description" cols="80"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <img src="{{ asset('storage/' . $post->image) }}" width="100px" height="70px">

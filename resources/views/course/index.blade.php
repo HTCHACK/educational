@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="breadcrumb_section background_bg overlay_bg_50 page_title_light" data-img-src="{{ asset('assets/images/course_img1.jpg')}}">
+<div class="breadcrumb_section background_bg overlay_bg_50 page_title_light" data-img-src="{{ asset('assets/images/course.jpg')}}">
     <div class="container"><!-- STRART CONTAINER -->
         <div class="row">
             <div class="col-sm-12">
@@ -24,70 +24,7 @@
 <!-- END SECTION BREADCRUMB -->
 
 <!-- START SECTION TEAM -->
-<div class="section small_pb">
-	<div class="container">
-        <div class="row">
-        	<div class="col-lg-4">
-            	<div class="team_single">
-                	<div class="team_img">
-                    	<img src="{{ asset('assets/images/ABOUT1.jpg')}}" alt="team_img_big">
-                    </div>
-                    <div class="team_single_info">
-                        <div class="team_name">
-                            <h5>Alisher Halimjonov</h5>
-                            <span>Ona Tili va Adabiyot</span>
-                        </div>
-                        <ul class="list_none social_icons">
-                            <li><a href="" class="sc_facebook"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="" class="sc_twitter"><i class="ion-social-twitter"></i></a></li>
-                            <li><a href="" class="sc_gplus"><i class="ion-social-googleplus"></i></a></li>
-                            <li><a href="" class="sc_instagram"><i class="ion-social-instagram-outline"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-            	<div class="team_detail">
-                    <div class="teacher_desc">
-                    	<div class="heading_s1 mb-3">
-                        	<h5>Men Haqimda</h5>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam vero expedita fugiat illo quasi doloremque, in unde omnis sint assumenda! Quaerat in, reprehenderit corporis voluptatum natus sequi reiciendis ullam. Quam eaque dolorum voluptates cupiditate explicabo.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 mb-2 mb-md-0">
-                            <div class="heading_s1 mb-3">
-                                <h5>Ta'lim</h5>
-                            </div>
-                            <div class="content_box">
-                                <span class="text_default">2000-2009 Maktab</span>
-                                <h6>Maktab</h6>
-                            </div>
-                            <div class="content_box">
-                                <span class="text_default">2016-2019 Andijon Davlat Universiteti</span>
-                                <h6>Bakalavr Diplom</h6>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="heading_s1 mb-3">
-                                <h5>Tajriba</h5>
-                            </div>
-                            <div class="content_box">
-                                <span class="text_default">2013-2015 ADU</span>
-                                <h6>Tarix</h6>
-                            </div>
-                            <div class="content_box">
-                                <span class="text_default">2018 - </span>
-                                <h6>Ona Tili</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="section small_pt">
 	<div class="container">

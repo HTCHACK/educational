@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Library;
 use Illuminate\Http\Request;
-use App\Course;
-use App\Email;
 
-class CoursesController extends Controller
+class LibrariesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('show','CoursesPage',);
-        $this->middleware('can:admin')->except('show','CoursesPage',);
+        $this->middleware('auth')->except('show','LibraryPage');
+        $this->middleware('can:admin')->except('show','LibraryPage');
     }
-    
+
     public function index()
     {
-        return view('admin.course.index', ['courses' => Course::all()]);
+        $libraries = Library::paginate(6);
+        return view('admin.library.index',compact('libraries'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        return view('admin.course.create');
+        return view('admin.library.create');
     }
 
     /**
@@ -39,12 +39,11 @@ class CoursesController extends Controller
     {
 
         $request->validate([
-            'image' => 'required|mimes:png,jpg,jpeg,webp,gif,svg|max:2048',
-            'file' => 'required|mimes:mp4|max:2048000',
+            'image' => 'required|mimes:png,jpg,jpeg,webp,gif,svg,mp4|max:2048',
+            'file' =>'required|mimes:pdf,xlsx,xls,zip,rar,csv,pptx,docx,ppt,djvu|max:10240',
         ]);
 
         $input = $request->all();
-
         $fileName = time() . '.' . request()->file->getClientOriginalExtension();
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         $input['file'] = $fileName;
@@ -52,9 +51,9 @@ class CoursesController extends Controller
         request()->file->move(public_path('storage'), $fileName);
         request()->image->move(public_path('storage'), $imageName);
 
-        Course::create($input);
+        Library::create($input);
 
-        return redirect()->route('courses.index')->with('success', 'Successfully Created');
+        return redirect()->route('libraries.index')->with('success', 'Successfully Uploaded');
     }
 
     /**
@@ -65,14 +64,8 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        return view('course.show',
-      [
-        'course'=>Course::limit(5)->orderBy('created_at','DESC')->findorFail($id),
-        'email'=>Email::all(),
-      ]  
-    );
+        //
     }
-    
 
     /**
      * Show the form for editing the specified resource.
@@ -82,7 +75,7 @@ class CoursesController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.course.edit', ['course' => Course::findorFail($id)]);
+        return view('admin.library.edit',['library' => Library::findorFail($id)]);
     }
 
     /**
@@ -92,12 +85,13 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Library $library)
     {
         $request->validate([
             'image' => 'required|mimes:png,jpg,jpeg,webp,gif,svg,mp4|max:2048',
-            'file' => 'required|mimes:mp4|max:20480',
+            'file' =>'required|mimes:pdf,xlsx,xls,zip,rar,csv,pptx,docx,ppt,djvu|10240',
         ]);
+
 
         $input = $request->all();
 
@@ -108,11 +102,10 @@ class CoursesController extends Controller
         request()->file->move(public_path('storage'), $fileName);
         request()->image->move(public_path('storage'), $imageName);
 
+        Library::findorFail($library->id)
+        ->update($input);
 
-        Course::findorFail($course->id)
-            ->update($input);
-
-        return redirect()->route('courses.index')->with('success', 'Successfully Updated');
+        return redirect()->route('libraries.index')->with('success', 'Successfully updated');
     }
 
     /**
@@ -121,18 +114,19 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Library $library)
     {
-        $find = Course::findorFail($course->id);
-        if ($find->delete()) {
+        $findImage = Library::findorFail($library->id);
+        if ($findImage->delete()) {
 
-            return redirect()->route('courses.index')->with('success', 'Course deleted Successfully');
+            return redirect()->route('libraries.index')->with('success', 'Book deleted Successfully');
         }
 
-        return back()->withInput()->with('errors', 'Course could not be deleted');
+        return back()->withInput()->with('errors', 'Book could not be deleted');
     }
 
-    public function CoursesPage(){
-        return view('course.index',['courses'=>Course::all(),'email'=>Email::all()]);
+    public function LibraryPage(){
+        $libraries = Library::orderBy('updated_at', 'desc')->paginate(6);
+        return view('library.index',compact('libraries'));
     }
 }

@@ -10,8 +10,9 @@
         <div id="carouselExampleControls" class="carousel slide carousel-fade carousel_style1 light_arrow"
             data-ride="carousel">
             <div class="carousel-inner">
+                @foreach ($banner as $key=>$ban)
                 <div class="carousel-item active background_bg overlay_bg_60"
-                    data-img-src="{{ asset('assets/images/course_img6.jpg') }}">
+                    data-img-src="{{ asset('storage/' . $ban->image) }}">
                     <div class="banner_slide_content">
                         <div class="container">
                             <!-- STRART CONTAINER -->
@@ -19,15 +20,13 @@
                                 <div class="col-lg-7 col-md-12 col-sm-12 text-center">
                                     <div class="banner_content text_white">
                                         <h2 class="staggered-animation" data-animation="fadeInUp"
-                                            data-animation-delay="0.2s">Kurslar</h2>
+                                            data-animation-delay="0.2s">{{$ban->title}}</h2>
                                         <p class="staggered-animation" data-animation="fadeInUp"
-                                            data-animation-delay="0.4s">If you are going to use a passage of Lorem Ipsum,
-                                            you need to be sure there isn't anything embarrassing hidden in the middle of
-                                            text.</p>
+                                            data-animation-delay="0.4s">{{$ban->subtitile}}</p>
                                         <a class="btn btn-default btn-radius staggered-animation"
                                             href="{{ route('courseus.index') }}" data-animation="fadeInUp"
                                             data-animation-delay="0.6s">Boshlash</a>
-                                        <a class="btn btn-white btn-radius staggered-animation" href="#post"
+                                        <a class="btn btn-white btn-radius staggered-animation" href="#postss"
                                             data-animation="fadeInUp" data-animation-delay="0.6s">Ko'proq</a>
                                     </div>
                                 </div>
@@ -35,56 +34,8 @@
                         </div><!-- END CONTAINER-->
                     </div>
                 </div>
-                <div class="carousel-item background_bg overlay_bg_60"
-                    data-img-src="{{ asset('assets/images/course_img5.jpg') }}">
-                    <div class="banner_slide_content">
-                        <div class="container">
-                            <!-- STRART CONTAINER -->
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 col-md-12 col-sm-12 text-center">
-                                    <div class="banner_content text_white">
-                                        <h2 class="staggered-animation" data-animation="fadeInUp"
-                                            data-animation-delay="0.2s">Hoziroq boshlang Porloq Kelajak Uchun</h2>
-                                        <p class="staggered-animation" data-animation="fadeInUp"
-                                            data-animation-delay="0.4s">If you are going to use a passage of Lorem Ipsum,
-                                            you need to be sure there isn't anything embarrassing hidden in the middle of
-                                            text.</p>
-                                        <a class="btn btn-default btn-radius staggered-animation"
-                                            href="{{ route('courseus.index') }}" data-animation="fadeInUp"
-                                            data-animation-delay="0.6s">Boshlash</a>
-                                        <a class="btn btn-white btn-radius staggered-animation" href="#post"
-                                            data-animation="fadeInUp" data-animation-delay="0.6s">Ko'proq</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END CONTAINER-->
-                    </div>
-                </div>
-                <div class="carousel-item background_bg overlay_bg_60"
-                    data-img-src="{{ asset('assets/images/course_img4.jpg') }}">
-                    <div class="banner_slide_content">
-                        <div class="container">
-                            <!-- STRART CONTAINER -->
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 col-md-12 col-sm-12 text-center">
-                                    <div class="banner_content text_white">
-                                        <h2 class="staggered-animation" data-animation="fadeInUp"
-                                            data-animation-delay="0.2s">Online Kurslar</h2>
-                                        <p class="staggered-animation" data-animation="fadeInUp"
-                                            data-animation-delay="0.4s">If you are going to use a passage of Lorem Ipsum,
-                                            you need to be sure there isn't anything embarrassing hidden in the middle of
-                                            text.</p>
-                                        <a class="btn btn-default btn-radius staggered-animation"
-                                            href="{{ route('courseus.index') }}" data-animation="fadeInUp"
-                                            data-animation-delay="0.6s">Boshlash</a>
-                                        <a class="btn btn-white btn-radius staggered-animation" href="#post"
-                                            data-animation="fadeInUp" data-animation-delay="0.6s">Ko'proq</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END CONTAINER-->
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
             <a class="carousel-control-prev" href="" role="button" data-slide="prev"><i class="ion-chevron-left"></i></a>
             <a class="carousel-control-next" href="" role="button" data-slide="next"><i class="ion-chevron-right"></i></a>
@@ -151,7 +102,7 @@
     </div>
     <!-- END SECTION WHY CHOOSE -->
     <!-- START SECTION COURSES-->
-    <div class="section pb_70">
+    <div class="section pb_70" id="postss">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
@@ -162,6 +113,7 @@
                 </div>
             </div>
             <div class="row">
+                @if(!empty($posts) && $posts->count())
                 @foreach ($posts as $key => $post)
                     <div class="col-lg-4 col-md-6">
 
@@ -202,9 +154,21 @@
                         </div>
                     </div>
                 @endforeach
-
-
-
+                @else
+                <div class="col-lg-12 col-md-12">
+                    <div class="heading_s1 text-center">
+                        <h2>So'ngi Yangiliklar Yoq</h2>
+                    </div>
+                 </div>  
+                @endif
+                
+            </div>
+            <div class="row" style="text-align:center">
+                <div class="col-12 mt-2 mt-md-3">
+                    <ul class="pagination pagination_style1 justify-content-center">
+                        {!! $posts->links() !!}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

@@ -27,6 +27,9 @@ Route::resource('posts', 'PostsController')->only('create', 'index', 'store');
 Route::resource('comments', 'CommentsController');
 Route::resource('courses', 'CoursesController')->only('create', 'index', 'store');
 Route::resource('emails', 'EmailController')->only('create', 'index', 'store');
+Route::resource('banners', 'BannerController')->only('create', 'index', 'store');
+Route::resource('/teachers','TeachersController')->only('create', 'index', 'store');
+Route::resource('/libraries','LibrariesController')->only('create', 'index', 'store');
 
 
 Route::get('/contactus', 'ContactsController@ContactPage')->name('contactus.index');
@@ -34,6 +37,9 @@ Route::get('/ourgallery', 'GalleriesController@GalleryPage')->name('ourgallery.i
 Route::get('/postus/{id}', [PostsController::class, 'show'])->name('postus.show');
 Route::get('/courseus', [CoursesController::class, 'CoursesPage'])->name('courseus.index');
 Route::get('/courseus/{id}', [CoursesController::class, 'show'])->name('courseus.show');
+Route::get('/ourteacher', 'TeachersController@TeacherPage')->name('ourteacher.index');
+Route::get('/ourlibrary', 'LibrariesController@LibraryPage')->name('ourlibrary.index');
+
 
 
 
@@ -48,6 +54,9 @@ function ()
     Route::resource('/comments', 'CommentsController')->only('index');
     Route::resource('/courses', 'CoursesController');
     Route::resource('/emails', 'EmailController')->only('index','destroy');
+    Route::resource('/banners', 'BannerController');
+    Route::resource('/teachers','TeachersController');
+    Route::resource('/libraries', 'LibrariesController');
 });
 
 

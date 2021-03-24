@@ -18,11 +18,8 @@
                         </div>
                         <p>Ona Tili va Adabiyot , Tarix va Barcha Ijtimoyi Fanlar,Ona Tili va Adabiyot , Tarix va Barcha Ijtimoyi Fanlar,Ona Tili va Adabiyot , Tarix va Barcha Ijtimoyi Fanlar</p>
                         <ul class="social_icons rounded_social social_white social_style1">
-                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
-                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
-                            <li><a href=""><i class="ion-social-googleplus"></i></a></li>
-                            <li><a href=""><i class="ion-social-youtube-outline"></i></a></li>
-                            <li><a href=""><i class="ion-social-instagram-outline"></i></a></li>
+                            <li><a href="https://www.facebook.com/alisher.halimjonov.1"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="https://t.me/onatili_tarix_kurs"><i class="fas fa-paper-plane"></i></a></li>
                         </ul>
                     </div>
                 </div>

@@ -50,7 +50,7 @@
                                         
                                         
                                         <div class="form-group">
-                                            <textarea class="form-control" name="description"  placeholder="description" cols="80"></textarea>
+                                            <textarea class="form-control" name="description" id="id_subtitle" placeholder="description" cols="80"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlFile1" style="border: 2px solid #9C27B0;border-radius:3px;padding:0.4rem 1rem">Choose Image Max Size 2MB</label>

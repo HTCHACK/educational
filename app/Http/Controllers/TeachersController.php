@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Gallery;
-use App\Category;
-use App\Email;
+use App\Teacher;
 use Illuminate\Http\Request;
-use App\Http\Requests\GalleryRequest;
+use App\Http\Requests\TeacherRequest;
 
-class GalleriesController extends Controller
+class TeachersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('show','GalleryPage');
-        $this->middleware('can:admin')->except('show','GalleryPage');
+        $this->middleware('auth')->except('show','TeacherPage');
+        $this->middleware('can:admin')->except('show','TeacherPage');
     }
+
 
     public function index()
     {
-        return view('admin.gallery.index', ['galleries' => Gallery::all()]);
+        return view('admin.teacher.index',['teachers'=>Teacher::all()]);
     }
 
     /**
@@ -26,9 +25,9 @@ class GalleriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Gallery $request)
+    public function create()
     {
-        return view('admin.gallery.create');
+        return view('admin.teacher.create');
     }
 
     /**
@@ -37,19 +36,17 @@ class GalleriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GalleryRequest $request)
+    public function store(TeacherRequest $request)
     {
-        
-        
         $input = $request->all();
 
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         $input['image'] = $imageName;
         request()->image->move(public_path('storage'), $imageName);
 
-        Gallery::create($input);
+        Teacher::create($input);
 
-        return redirect()->route('galleries.index')->with('success', 'Successfully Uploaded');
+        return redirect()->route('teachers.index')->with('success', 'Successfully Uploaded');
     }
 
     /**
@@ -71,8 +68,7 @@ class GalleriesController extends Controller
      */
     public function edit($id)
     {
-
-        return view('admin.gallery.edit', ['gallery' => Gallery::findorFail($id)]);
+        return view('admin.teacher.edit',['teacher'=>Teacher::findorFail($id)]);
     }
 
     /**
@@ -82,19 +78,18 @@ class GalleriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GalleryRequest $request, Gallery $gallery)
+    public function update(TeacherRequest $request,Teacher $teacher)
     {
-        
         $input = $request->all();
+
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         $input['image'] = $imageName;
         request()->image->move(public_path('storage'), $imageName);
 
+        Teacher::findorFail($teacher->id)
+        ->update($input);
 
-        Gallery::findorFail($gallery->id)
-            ->update($input);
-
-        return redirect()->route('galleries.index')->with('success', 'Successfully Updated');
+        return redirect()->route('teachers.index')->with('success', 'Successfully updated');
     }
 
     /**
@@ -103,20 +98,20 @@ class GalleriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $gallery)
+    public function destroy(Teacher $teacher)
     {
-        $findImage = Gallery::findorFail($gallery->id);
+        $findImage = Teacher::findorFail($teacher->id);
         if ($findImage->delete()) {
 
-            return redirect()->route('galleries.index')->with('success', 'Image deleted Successfully');
+            return redirect()->route('teachers.index')->with('success', 'Teacher deleted Successfully');
         }
 
         return back()->withInput()->with('errors', 'Image could not be deleted');
     }
 
-    public function GalleryPage()
-    {
-        $galleries = Gallery::paginate(6);
-        return view('gallery.index', compact('galleries'),['categories' => Category::all(),'email'=>Email::all()]);
+    public function TeacherPage(){
+
+        $teachers = Teacher::orderBy('created_at', 'desc')->paginate(3);
+        return view('teacher.index',compact('teachers'));
     }
 }

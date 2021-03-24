@@ -24,6 +24,24 @@
                     <p>Gallery</p>
                 </a>
             </li>
+            <li class="nav-item  {{ Str::contains(Route::currentRouteName(), 'banners') ? 'active' : null }}">
+                <a class="nav-link" href="{{route('banners.index')}}">
+                    <i class="fa fa-flag"></i>
+                    <p>Banners</p>
+                </a>
+            </li>
+            <li class="nav-item  {{ Str::contains(Route::currentRouteName(), 'teachers') ? 'active' : null }}">
+                <a class="nav-link" href="{{route('teachers.index')}}">
+                    <i class="fa fa-graduation-cap"></i>
+                    <p>Teachers</p>
+                </a>
+            </li>
+            <li class="nav-item  {{ Str::contains(Route::currentRouteName(), 'libraries') ? 'active' : null }}">
+                <a class="nav-link" href="{{route('libraries.index')}}">
+                    <i class="fa fa-book"></i>
+                    <p>Books</p>
+                </a>
+            </li>
             <li class="nav-item {{ Str::contains(Route::currentRouteName(), 'posts') ? 'active' : null }}">
                 <a class="nav-link" href="{{route('posts.index')}}">
                     <i class="fa fa-paper-plane"></i>

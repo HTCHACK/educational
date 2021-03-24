@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <!-- START SECTION BREADCRUMB -->
-<div class="breadcrumb_section background_bg overlay_bg_50 page_title_light" data-img-src="{{ asset('assets/images/gallery_item1.jpg')}}">
+<div class="breadcrumb_section background_bg overlay_bg_50 page_title_light" data-img-src="{{ asset('assets/images/gallery.jpg')}}">
     <div class="container"><!-- STRART CONTAINER -->
         <div class="row">
             <div class="col-sm-12">
@@ -28,12 +28,13 @@
         	<div class="col-md-12 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
             	<ul class="grid_container gutter_medium grid_col3 image_gallery">
                 	<li class="grid-sizer"></li>
+                    @if(!empty($galleries) && $galleries->count())
                     @foreach($galleries as $key=>$gallery)
                     <li class="grid_item brands adv">
                     	<div class="image_gallery_item">
                             <a href="{{ asset('storage/' . $gallery->image) }}">
                                 <div class="gallery_img">
-                                    <img src="{{ asset('storage/' . $gallery->image) }}" alt="image">
+                                    <img src="{{ asset('storage/' . $gallery->image) }}" alt="image" width="350px" height="250px">
                                 </div>
                                 <div class="gallary_hover_box">
                                     <i class="ti-zoom-in"></i>
@@ -42,6 +43,20 @@
                         </div>
                     </li>
                     @endforeach
+                    @else
+                    <div class="col-lg-12 col-md-12">
+                        <div class="heading_s1 text-center">
+                            <h2>Rasm Yoq</h2>
+                        </div>
+                     </div>
+                    @endif
+                </ul>
+            </div>
+        </div>
+        <div class="row" style="text-align:center">
+            <div class="col-12 mt-2 mt-md-3">
+                <ul class="pagination pagination_style1 justify-content-center">
+                    {!! $galleries->links() !!}
                 </ul>
             </div>
         </div>

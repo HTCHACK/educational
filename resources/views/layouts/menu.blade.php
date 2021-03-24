@@ -11,10 +11,8 @@
                 <div class="col-md-6">
                     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-end">
                         <ul class="social_icons social_white">
-                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
-                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
-                            <li><a href=""><i class="fas fa-paper-plane"></i></a></li>
-                            <li><a href=""><i class="ion-social-instagram-outline"></i></a></li>
+                            <li><a href="https://www.facebook.com/alisher.halimjonov.1"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="https://t.me/onatili_tarix_kurs"><i class="fas fa-paper-plane"></i></a></li>
                         </ul>
                         <ul class="header_list border_list">
                             <li><a href="https://t.me/onatili_tarix_kurs" class="nav_btn ">Channel</a></li>
@@ -36,10 +34,26 @@
                 <ul class="navbar-nav">
 					
                     <li><a class="nav-link {{ Str::contains(Route::currentRouteName(), 'home') ? 'active' : null }} nav_item" href="{{route('home')}}">Bosh Sahifa</a></li>
-                    <li><a class="nav-link {{ Str::contains(Route::currentRouteName(), 'courseus') ? 'active' : null }} nav_item" href="{{route('courseus.index')}}">Kurslar</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" href="index-3.html#">Sahifalar</a>
+                        <div class="dropdown-menu">
+							<ul>
+                                <li><a class="dropdown-item nav-link {{ Str::contains(Route::currentRouteName(), 'ourteacher') ? 'active' : null }} nav_item" href="{{route('ourteacher.index')}}">O'qituvchiar</a></li>
+                                <li><a class="dropdown-item nav-link {{ Str::contains(Route::currentRouteName(), 'courseus') ? 'active' : null }} nav_item" href="{{ route('courseus.index') }}">Talabalar</a></li>
+                                <li><a class="dropdown-item nav-link {{ Str::contains(Route::currentRouteName(), 'courseus') ? 'active' : null }} nav_item" href="{{ route('courseus.index') }}">Abituriyentlar</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" href="">Kurslar</a>
+                        <div class="dropdown-menu">
+							<ul>
+                                <li><a class="dropdown-item nav-link {{ Str::contains(Route::currentRouteName(), 'courseus') ? 'active' : null }} nav_item" href="{{ route('courseus.index') }}">Kurslar</a></li>
+                                <li><a class="dropdown-item nav-link  {{ Str::contains(Route::currentRouteName(), 'ourlibrary') ? 'active' : null }} nav_item" href="{{ route('ourlibrary.index') }}">Kutubxona</a></li>
+                          </ul>
+                        </div>
+                      </li>
                     <li><a class="nav-link {{ Str::contains(Route::currentRouteName(), 'ourgallery') ? 'active' : null }} nav_item" href="{{route('ourgallery.index')}}">Galareya</a></li> 
                     <li><a class="nav-link {{ Str::contains(Route::currentRouteName(), 'contactus') ? 'active' : null }} nav_item" href="{{route('contactus.index')}}">Aloqa</a></li>      
-							
+                    
 					
                 </ul>
           	</div>
