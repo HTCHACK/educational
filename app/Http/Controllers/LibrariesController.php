@@ -51,6 +51,8 @@ class LibrariesController extends Controller
         request()->file->move(public_path('storage'), $fileName);
         request()->image->move(public_path('storage'), $imageName);
 
+        
+
         Library::create($input);
 
         return redirect()->route('libraries.index')->with('success', 'Successfully Uploaded');
