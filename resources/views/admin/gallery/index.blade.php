@@ -94,6 +94,11 @@
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col-md-12" style="background:rgb(151, 10, 132) ; padding-top:1rem;text-align:center">
+                    {!! $galleries->links() !!}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

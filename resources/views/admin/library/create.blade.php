@@ -40,11 +40,11 @@
 
                                         @csrf
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Kitob Nomi" 
+                                            <input type="text" class="form-control"  placeholder="Kitob Nomi"
                                                 name="name">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Kitob Haqida qisqacha  soz" 
+                                            <input type="text" class="form-control"  placeholder="Kitob Haqida qisqacha  soz"
                                                 name="subtitle">
                                         </div>
                                         <div class="form-group">
@@ -52,8 +52,8 @@
                                             <input id="exampleFormControlFile1" type="file" name="image" class="form-control-file" title="exampleFormControlFile1">
                                         </div>
                                         <div class="form-group">
-                                            <label for="example" style="border: 2px solid #9C27B0;border-radius:3px;padding:0.4rem 1rem">Choose File Max Size 20MB</label>
-                                            <input id="example" type="file" name="file" class="form-control-file" title="">
+                                            <input type="text" class="form-control"  placeholder="Kitob linki Google drive dagi"
+                                                name="url">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Max Size 2MB</button>
                                     </form>

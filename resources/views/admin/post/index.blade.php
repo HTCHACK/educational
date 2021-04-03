@@ -62,7 +62,7 @@
                                         <tbody>
                                             @foreach($posts as $key=>$post)
                                             <tr>
-                                                
+
                                                 <td class="text-primary">{{ ++$key }}</td>
                                                 <td class="text-primary">{{ $post->name }}</td>
                                                 <td class="text-primary">{{ $post->category_id }}</td>
@@ -92,6 +92,11 @@
                         </div>
                     </div>
 
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="background:rgb(151, 10, 132) ; padding-top:1rem;text-align:center">
+                    {!! $posts->links() !!}
+                    </div>
                 </div>
             </div>
         </div>

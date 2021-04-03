@@ -42,7 +42,7 @@
                              <p>{{$library->subtitle}}</p>
                          </div>
                          <div class="event_btn">
-                             <a href="{{ asset('storage/' . $library->file) }}" class="btn btn-default" download="{{ asset('storage/' . $library->file) }}"><i class="fa fa-download"></i> Download</a>
+                             <a href="{!! $library->url !!}" class="btn btn-default" download="{!! $library->url !!}"><i class="fa fa-download"></i> Download</a>
                          </div>
                      </div>
                  </div>
@@ -61,8 +61,8 @@
 </div>
 <!-- END SECTION EVENTS-->
 <div class="small_pt pb-0 newsletter_overlap">
-    <div class="container">	
-        <div class="row justify-content-center">	
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="bg_default radius_all_10 text_white newsletter_box animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                     <div class="row align-items-center">
@@ -70,11 +70,11 @@
                             <div class="heading_s1">
                                 <h2 class="font_style1">Obuna Bo'ling</h2>
                             </div>
-                            
+
                         </div>
                         <div class="col-lg-6">
                             <div class="newsletter_form2 rounded_input">
-                                <form method="POST" action="{{route('emails.store')}}"> 
+                                <form method="POST" action="{{route('emails.store')}}">
                                     @csrf
                                     <input type="text" name="email" class="form-control" required="" placeholder="Email Manzil">
                                     <button type="submit" title="Subscribe" class="btn btn-default btn-radius" name="submit" value="Submit">Obuna Bo'lish</button>

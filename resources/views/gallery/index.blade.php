@@ -1,6 +1,10 @@
 @extends('layouts.body')
 @section('title')
     <title>AlisherFilolog | Galareya</title>
+    <meta property="og:url"           content="http://www.alisherfilolog.uz/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Alisher Filolog | Uz" />
+    <meta property="og:image"         content="{ asset('assets/images/gallery.jpg')}}" />
 @endsection
 @section('content')
     <!-- START SECTION BREADCRUMB -->
@@ -64,8 +68,8 @@
 </div>
 
 <div class="small_pt pb-0 newsletter_overlap">
-	<div class="container">	
-    	<div class="row justify-content-center">	
+	<div class="container">
+    	<div class="row justify-content-center">
             <div class="col-md-12">
             	<div class="bg_default radius_all_10 text_white newsletter_box animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                 	<div class="row align-items-center">
@@ -73,11 +77,11 @@
                             <div class="heading_s1">
                                 <h2 class="font_style1">Obuna Bo'ling</h2>
                             </div>
-                            
+
                         </div>
                         <div class="col-lg-6">
                             <div class="newsletter_form2 rounded_input">
-                                <form method="POST" action="{{route('emails.store')}}"> 
+                                <form method="POST" action="{{route('emails.store')}}">
                                     @csrf
                                     <input type="text" name="email" class="form-control" required="" placeholder="Email Manzil">
                                     <button type="submit" title="Subscribe" class="btn btn-default btn-radius" name="submit" value="Submit">Obuna Bo'lish</button>

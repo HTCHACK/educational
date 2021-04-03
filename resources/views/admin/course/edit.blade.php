@@ -48,8 +48,8 @@
                                             <input type="text" class="form-control"  placeholder="Author" value="{{$course->author}}"
                                                 name="author">
                                         </div>
-                                        
-                                        
+
+
                                         <div class="form-group">
                                             <textarea class="form-control" name="description" id="id_subtitle" placeholder="description" cols="80"></textarea>
                                         </div>
@@ -59,9 +59,8 @@
                                             <input id="exampleFormControlFile1" type="file" name="image" class="form-control-file" title="{{$course->image}}">
                                         </div>
                                         <div class="form-group">
-                                            <embed src="{{ asset('storage/' . $course->file) }}" width="100px" height="70px" />
-                                            <label for="example" style="border: 2px solid #9C27B0;border-radius:3px;padding:0.4rem 1rem">Choose File Max Size 20MB</label>
-                                            <input id="example" type="file" name="file" class="form-control-file" title="{{$course->file}}">
+                                            <input type="text" class="form-control"  placeholder="You tube Url" value="{{$course->url}}"
+                                                name="url">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Edit</button>
                                     </form>

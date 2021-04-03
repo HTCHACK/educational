@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-   
+
 <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section background_bg overlay_bg_50 page_title_light" data-img-src="{{ asset('storage/' . $course->image) }}">
     <div class="container"><!-- STRART CONTAINER -->
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                             </li>
-                           
+
                             <li>
                                 <div class="course_rating">
                                     <label>Review</label>
@@ -54,7 +54,7 @@
                                         <i class="ion-android-star"></i>
                                         <i class="ion-android-star"></i>
                                         <i class="ion-android-star"></i>
-                                        <i class="ion-android-star-outline"></i> 
+                                        <i class="ion-android-star-outline"></i>
                                         <span>4.0</span>
                                     </div>
                                 </div>
@@ -69,15 +69,13 @@
                     </div>
                     <div class="course_img">
 						<a href="">
-                            <video controls muted>
-                            <source  src="{{ asset('storage/' . $course->file) }}" alt="course_img" type="video/mp4">
-                            </video>
+                            <iframe width="100%" height="320px"  src="https://www.youtube.com/embed/{!! $course->url !!}" frameborder="0" allowfullscreen ></iframe>
                         </a>
                     </div>
                     <div class="course_info">
-                        <div class="course_desc"> 
+                        <div class="course_desc">
                         	<div class="heading_s1">
-                        		<h4>Tavsif : Download File Courses   <a class="btn btn-dark rounded-0 checkout   " href="{{ asset('storage/' . $course->file) }}" download="{{ asset('storage/' . $course->file) }}"><i class="fa fa-download"></i> DOWNLOAD</a></h4>
+                        		<h4>Tavsif : Download Video Courses   <a class="btn btn-dark rounded-0 checkout" href="{!! $course->url !!}" download="{!! $course->url !!}"><i class="fa fa-download"></i> DOWNLOAD</a></h4>
                             </div>
                         	<p>{!! $course->description !!}
                                 <a class="btn btn-default" href="{{ route('courseus.index') }}"><i class="fa fa-plus"></i> KO'PROQ</a>
@@ -86,13 +84,13 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
 <div class="small_pt pb-0 newsletter_overlap">
-	<div class="container">	
-    	<div class="row justify-content-center">	
+	<div class="container">
+    	<div class="row justify-content-center">
             <div class="col-md-12">
             	<div class="bg_default radius_all_10 text_white newsletter_box animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                 	<div class="row align-items-center">
@@ -100,11 +98,11 @@
                             <div class="heading_s1">
                                 <h2 class="font_style1">Obuna Bo'ling</h2>
                             </div>
-                            
+
                         </div>
                         <div class="col-lg-6">
                             <div class="newsletter_form2 rounded_input">
-                                <form method="POST" action="{{route('emails.store')}}"> 
+                                <form method="POST" action="{{route('emails.store')}}">
                                     @csrf
                                     <input type="text" name="email" class="form-control" required="" placeholder="Email Manzil">
                                     <button type="submit" title="Subscribe" class="btn btn-default btn-radius" name="submit" value="Submit">Obuna Bo'lish</button>

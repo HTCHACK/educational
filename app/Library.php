@@ -10,6 +10,6 @@ class Library extends Model
         'name',
         'subtitle',
         'image',
-        'file'
+        'url'
     ];
 }

@@ -10,7 +10,7 @@ class Course extends Model
         'name',
         'description',
         'image',
-        'file',
+        'url',
         'author',
     ];
 

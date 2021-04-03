@@ -3277,5 +3277,3 @@ script.onload = function() {
         content_css: 'css/content.css'
     });
 }
-
-

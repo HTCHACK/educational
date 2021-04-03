@@ -14,7 +14,7 @@ class CommentsController extends Controller
         $this->middleware('auth')->except('show','store');
         $this->middleware('can:admin')->except('show','store');
     }
-    
+
     public function index()
     {
         return view('admin.comment.index', ['comments' => Comment::all()]);
@@ -46,12 +46,12 @@ class CommentsController extends Controller
             'post_id'=>$request->id,
         ]);
 
-        
+
 
         return redirect()->back()->with('success', 'Comment Successfully posted');
     }
 
-    
+
     /**
      * Display the specified resource.
      *

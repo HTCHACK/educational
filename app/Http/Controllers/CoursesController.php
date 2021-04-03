@@ -13,7 +13,7 @@ class CoursesController extends Controller
         $this->middleware('auth')->except('show','CoursesPage',);
         $this->middleware('can:admin')->except('show','CoursesPage',);
     }
-    
+
     public function index()
     {
         return view('admin.course.index', ['courses' => Course::all()]);
@@ -40,16 +40,13 @@ class CoursesController extends Controller
 
         $request->validate([
             'image' => 'required|mimes:png,jpg,jpeg,webp,gif,svg|max:2048',
-            'file' => 'required|mimes:mp4|max:2048000',
         ]);
 
         $input = $request->all();
 
-        $fileName = time() . '.' . request()->file->getClientOriginalExtension();
+
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
-        $input['file'] = $fileName;
         $input['image'] = $imageName;
-        request()->file->move(public_path('storage'), $fileName);
         request()->image->move(public_path('storage'), $imageName);
 
         Course::create($input);
@@ -69,10 +66,10 @@ class CoursesController extends Controller
       [
         'course'=>Course::limit(5)->orderBy('created_at','DESC')->findorFail($id),
         'email'=>Email::all(),
-      ]  
+      ]
     );
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -96,16 +93,12 @@ class CoursesController extends Controller
     {
         $request->validate([
             'image' => 'required|mimes:png,jpg,jpeg,webp,gif,svg,mp4|max:2048',
-            'file' => 'required|mimes:mp4|max:20480',
         ]);
 
         $input = $request->all();
 
-        $fileName = time() . '.' . request()->file->getClientOriginalExtension();
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
-        $input['file'] = $fileName;
         $input['image'] = $imageName;
-        request()->file->move(public_path('storage'), $fileName);
         request()->image->move(public_path('storage'), $imageName);
 
 

@@ -1,6 +1,7 @@
 @extends('admin.layouts.body')
 @section('title')
     <title>Administration</title>
+    
 @endsection
 @section('content')
 
@@ -78,12 +79,12 @@
                         </div>
                     </div>
 
-                    
+
 
                 </div>
             </div>
         </div>
     </div>
 
-   
+
 @endsection

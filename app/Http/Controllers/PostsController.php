@@ -20,7 +20,8 @@ class PostsController extends Controller
 
     public function index()
     {
-        return view('admin.post.index', ['posts' => Post::all()]);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(3);
+        return view('admin.post.index', compact('posts'));
     }
 
     /**
@@ -74,10 +75,7 @@ class PostsController extends Controller
                 'post' => Post::orderBy('created_at', 'DESC')->findorFail($id),
                 'categories' => Category::all(),
                 'comments' => Comment::where('post_id', $id)->orderBy('created_at', 'DESC')->get(),
-                'latestcomments' => Comment::limit(3)->where('post_id', $id)->orderBy('created_at', 'DESC')->get(),
-                'posts' => Post::limit(2)->orderby('created_at', 'DESC')->get()->all(),
                 'popular' => Post::limit(4)->orderby('created_at', 'DESC')->get()->all(),
-                'galleries' => Gallery::limit(6)->get()->all(),
                 'email' => Email::all(),
             ]
         );
@@ -106,16 +104,16 @@ class PostsController extends Controller
     {
         $request->validate([
             'image' => 'required|mimes:png,jpg,jpeg,webp,gif,svg,mp4|max:2048',
-            
+
         ]);
 
         $input = $request->all();
 
-       
+
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
-        
+
         $input['image'] = $imageName;
-        
+
         request()->image->move(public_path('storage'), $imageName);
 
 

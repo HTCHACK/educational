@@ -51,17 +51,17 @@
                                             <h6><a href="{{ route('postus.show', $pop->id) }}">{{ Str::limit($pop->name, 30) }}</a>
                                                 <p class="small m-0">{{ Carbon\Carbon::parse($pop->created_at)->format('M d Y, H:i:s') }}</p>
                                             </h6>
-                                            
+
                                         </div>
                                     </div>
                                 </li>
                                 @endforeach
                             </ul>
                         </div>
-                        
+
                         <div class="widget">
                             <h6 class="widget_title text-uppercase">Post</h6>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                             <div class="blog_text">
                                 <h2 class="blog_title">{{ $post->name }}
                                 </h2>
-                                
+
                                 <ul class="list_none blog_meta">
                                     <li><a href=""><i
                                                 class="ti-calendar"></i>{{ Carbon\Carbon::parse($post->created_at)->format('M d Y') }}</a>
@@ -89,15 +89,15 @@
                                                     class="fa fa-paper-plane"></i> Share </a>
                                         </div>
                                     </li>
-                                    
+
                                 </ul>
                                 <p>{!! $post->description !!}
                                     <a class="btn btn-default" type="button" onclick="window.print()"><i class="fas fa-fw fa-print"></i>
                                         Print</a>
-                                            
+
                                  </p>
                                 <blockquote class="blockquote_style1">
-                                    <p>{{ Str::limit($post->description, 150) }}</p>
+                                    <p>{!! Str::limit($post->description, 150) !!}</p>
                                 </blockquote>
 
                                 <div class="blog_post_footer">
@@ -137,8 +137,8 @@
                             <div class="author_info">
                                 <h6 class="author_name"><a href=""
                                         class="mb-1 d-inline-block">{{ $post->author }}</a></h6>
-                                
-                                <p>{{ Str::limit($post->description, 120) }}</p>
+
+                                <p>{!! Str::limit($post->description, 120) !!}</p>
                             </div>
                         </div>
                     </div>
@@ -209,18 +209,18 @@
                                 </div>
                             </div>
                         </form>
-                        
+
 
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
 
     <div class="small_pt pb-0 newsletter_overlap">
-        <div class="container">	
-            <div class="row justify-content-center">	
+        <div class="container">
+            <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="bg_default radius_all_10 text_white newsletter_box animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                         <div class="row align-items-center">
@@ -228,11 +228,11 @@
                                 <div class="heading_s1">
                                     <h2 class="font_style1">Obuna Bo'ling</h2>
                                 </div>
-                                
+
                             </div>
                             <div class="col-lg-6">
                                 <div class="newsletter_form2 rounded_input">
-                                    <form method="POST" action="{{route('emails.store')}}"> 
+                                    <form method="POST" action="{{route('emails.store')}}">
                                         @csrf
                                         <input type="text" name="email" class="form-control" required="" placeholder="Email Manzil">
                                         <button type="submit" title="Subscribe" class="btn btn-default btn-radius" name="submit" value="Submit">Obuna Bo'lish</button>
@@ -245,7 +245,7 @@
             </div>
         </div>
     </div>
-   
+
     <!-- END SECTION BLOG -->
 
 @endsection

@@ -40,18 +40,14 @@ class LibrariesController extends Controller
 
         $request->validate([
             'image' => 'required|mimes:png,jpg,jpeg,webp,gif,svg,mp4|max:2048',
-            'file' =>'required|mimes:pdf,xlsx,xls,zip,rar,csv,pptx,docx,ppt,djvu|max:10240',
         ]);
 
         $input = $request->all();
-        $fileName = time() . '.' . request()->file->getClientOriginalExtension();
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
-        $input['file'] = $fileName;
         $input['image'] = $imageName;
-        request()->file->move(public_path('storage'), $fileName);
         request()->image->move(public_path('storage'), $imageName);
 
-        
+
 
         Library::create($input);
 
@@ -91,17 +87,14 @@ class LibrariesController extends Controller
     {
         $request->validate([
             'image' => 'required|mimes:png,jpg,jpeg,webp,gif,svg,mp4|max:2048',
-            'file' =>'required|mimes:pdf,xlsx,xls,zip,rar,csv,pptx,docx,ppt,djvu|10240',
         ]);
 
 
         $input = $request->all();
 
-        $fileName = time() . '.' . request()->file->getClientOriginalExtension();
+
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
-        $input['file'] = $fileName;
         $input['image'] = $imageName;
-        request()->file->move(public_path('storage'), $fileName);
         request()->image->move(public_path('storage'), $imageName);
 
         Library::findorFail($library->id)

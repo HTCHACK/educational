@@ -18,7 +18,8 @@ class GalleriesController extends Controller
 
     public function index()
     {
-        return view('admin.gallery.index', ['galleries' => Gallery::all()]);
+        $galleries = Gallery::orderBy('created_at', 'desc')->paginate(3);
+        return view('admin.gallery.index',compact('galleries'));
     }
 
     /**
@@ -39,8 +40,8 @@ class GalleriesController extends Controller
      */
     public function store(GalleryRequest $request)
     {
-        
-        
+
+
         $input = $request->all();
 
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
@@ -84,7 +85,7 @@ class GalleriesController extends Controller
      */
     public function update(GalleryRequest $request, Gallery $gallery)
     {
-        
+
         $input = $request->all();
         $imageName = time() . '.' . request()->image->getClientOriginalExtension();
         $input['image'] = $imageName;

@@ -1,6 +1,8 @@
 @extends('layouts.body')
 @section('title')
     <title>AlisherFilolog | Uz</title>
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Alisher Filolog | Uz" />
 @endsection
 @section('content')
 
@@ -35,7 +37,7 @@
                     </div>
                 </div>
                 @endforeach
-                
+
             </div>
             <a class="carousel-control-prev" href="" role="button" data-slide="prev"><i class="ion-chevron-left"></i></a>
             <a class="carousel-control-next" href="" role="button" data-slide="next"><i class="ion-chevron-right"></i></a>
@@ -159,9 +161,9 @@
                     <div class="heading_s1 text-center">
                         <h2>So'ngi Yangiliklar Yoq</h2>
                     </div>
-                 </div>  
+                 </div>
                 @endif
-                
+
             </div>
             <div class="row" style="text-align:center">
                 <div class="col-12 mt-2 mt-md-3">

@@ -18,7 +18,7 @@ class CreateLibrariesTable extends Migration
             $table->longText('name')->nullable();
             $table->longText('subtitle')->nullable();
             $table->string('image')->nullable();
-            $table->string('file')->nullable();
+            $table->longText('url')->nullable();
             $table->timestamps();
         });
     }

@@ -1,6 +1,9 @@
 @extends('layouts.body')
 @section('title')
     <title>AlisherFilolog | Aloqa</title>
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Alisher Filolog | Uz" />
+    <meta property="og:image"         content="{{ asset('assets/images/contact.jpeg') }}" />
 @endsection
 @section('content')
 
@@ -86,8 +89,8 @@
                         <div class="courses_title">
                             <div class="course_info">
                                 <div class="review_form field_form">
-                                   
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12111.697377980194!2d72.2316682!3d40.6315504!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb39ccbb8e0c27691!2s53-Maktab!5e0!3m2!1sen!2s!4v1616161350884!5m2!1sen!2s" 
+
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12111.697377980194!2d72.2316682!3d40.6315504!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb39ccbb8e0c27691!2s53-Maktab!5e0!3m2!1sen!2s!4v1616161350884!5m2!1sen!2s"
                                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                                 </div>
                             </div>
@@ -98,8 +101,8 @@
         </div>
     </div>
     <div class="small_pt pb-0 newsletter_overlap">
-        <div class="container">	
-            <div class="row justify-content-center">	
+        <div class="container">
+            <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="bg_default radius_all_10 text_white newsletter_box animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                         <div class="row align-items-center">
@@ -107,11 +110,11 @@
                                 <div class="heading_s1">
                                     <h2 class="font_style1">Obuna Bo'ling</h2>
                                 </div>
-                                
+
                             </div>
                             <div class="col-lg-6">
                                 <div class="newsletter_form2 rounded_input">
-                                    <form method="POST" action="{{route('emails.store')}}"> 
+                                    <form method="POST" action="{{route('emails.store')}}">
                                         @csrf
                                         <input type="text" name="email" class="form-control" required="" placeholder="Email Manzil">
                                         <button type="submit" title="Subscribe" class="btn btn-default btn-radius" name="submit" value="Submit">Obuna Bo'lish</button>
